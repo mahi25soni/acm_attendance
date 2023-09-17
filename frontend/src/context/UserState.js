@@ -6,6 +6,7 @@ import axios from "axios"
 const UserState = (props) => {
     const [user, setUser] = useState({})
 
+
     const takeAttendance = async (data) => { // Make takeAttendance async
       console.log("take attendance ke function mei aa gaya ", data);
       try {

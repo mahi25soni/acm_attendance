@@ -1,17 +1,21 @@
 const handleVerification = (err, req, res,next ) => {
     if (err || err.errors) {
-         let validationErrors = [];
+         let validationErrors;
+         
+         if(err.code == 11000){
+          validationErrors = err.keyValue.rollnumber + " is already registered"
+         }
+         console.log("new field k ", err)
         for (let field in err.errors) {
             const newField = err.errors[field]
-            
             if(newField.name === "ValidatorError"){
-                validationErrors.push(newField.message)
+                validationErrors = newField.message
             }
             else if (newField.name === "CastError"){
-                validationErrors.push("The write datatype for " + newField.path + " is " + newField.kind )
+                validationErrors = "The write datatype for " + newField.path + " is " + newField.kind 
             }
             else {
-              validationErrors.push(err)
+              validationErrors = err
             }
         }
     
