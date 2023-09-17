@@ -15,7 +15,7 @@ const handleVerification = (err, req, res,next ) => {
             }
         }
     
-        res.status(400).json( {success : false , "Message" : validationErrors} );
+        res.status(200).json( {success : false , "Message" : validationErrors} );
       } else {
         next(err);
       }

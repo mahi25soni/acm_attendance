@@ -4,7 +4,7 @@ const setRegistration = async (req, res, next) => {
     try {
         const newuser = new attendance(req.body)
         await newuser.save()
-        res.status(200).json({sucess : true , "Message" : "Noted!"})
+        res.status(200).json({success : true , "Message" : "Noted!"})
     }
     catch(e){
         next(e)

@@ -1,8 +1,13 @@
-import React from "react";
+import React , {useEffect, useContext} from "react";
+import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { attendanceSchema } from "../schema/allSchema";
+import { UserContext } from "../context/UserContext";
+
 
 export default function LoginForm() {
+  const history = useNavigate()
+  const {takeAttendance} = useContext(UserContext)
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -12,10 +17,15 @@ export default function LoginForm() {
       section: '', // Initialize class field
     },
     validationSchema : attendanceSchema,
-    onSubmit: function (values) {
-      console.log("the value are ", values)
-      alert(values);
-    //   resetForm();
+    onSubmit: async function (values) {
+      const nothing =  await takeAttendance(values)
+      console.log("the nothing is ", nothing)
+      if(nothing.success) {
+        history("/taken")
+      }
+      else {
+        alert("Need roll number is already registed")
+      } 
     }
   });
 
