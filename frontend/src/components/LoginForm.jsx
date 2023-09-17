@@ -13,7 +13,8 @@ export default function LoginForm() {
     },
     validationSchema : attendanceSchema,
     onSubmit: function (values) {
-      alert(`You are registered! Name: ${values.name}. Roll number: ${values.rollnumber}. Semester: ${values.semester}. Department: ${values.department}. Section: ${values.section}`);
+      console.log("the value are ", values)
+      alert(values);
     //   resetForm();
     }
   });
@@ -21,7 +22,7 @@ export default function LoginForm() {
   return (
     <div className="min-h-screen flex items-start justify-center " id="belowNavbar">
       <div className="p-8 rounded shadow-xl w-96 mt-12" id="theLoginForm">
-        <h2 className="text-3xl font-bold mb-4 text-center text-blue-400 underline">Attendance</h2>    
+        <h2 className="text-3xl font-bold mb-4 text-center text-blue-500 underline">Attendance</h2>    
         <form onSubmit={formik.handleSubmit}>
           <div className="mb-4">
             <input
@@ -69,10 +70,10 @@ export default function LoginForm() {
               className="w-full border rounded-md px-3 py-2 focus:outline-none focus:border-blue-500 focus:border-2 lighter-placeholder"
             >
               <option value="" disabled>Select Department</option>
-              <option value="cec">CEC</option>
-              <option value="it">IT</option>
-              <option value="ece">ECE</option>
-              <option value="me">ME</option>
+              <option value="CEC">CEC</option>
+              <option value="IT">IT</option>
+              <option value="ECE">ECE</option>
+              <option value="ME">ME</option>
             </select>
           </div>
           <div className="mb-4">
