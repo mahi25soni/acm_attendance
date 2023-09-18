@@ -1,5 +1,5 @@
 const {attendance} = require("../../models/models")
-
+const getIP = require("ipware")().get_ip
 const setRegistration = async (req, res, next) => {
     try {
         const newuser = new attendance(req.body)

@@ -27,7 +27,7 @@ export default function LoginForm(props) {
       if (nothing.success) {
         history("/taken");
       } else {
-        setAlertMessage(nothing.Message);
+          setAlertMessage(nothing.Message);
       }
     }
   });
@@ -104,7 +104,7 @@ export default function LoginForm(props) {
               onChange={formik.handleChange}
               value={formik.values.section}
               className="w-full border rounded-md px-3 py-2 focus:outline-none focus:border-blue-500 focus:border-2"
-              placeholder="Class"
+              placeholder="Section"
             />
             {formik.touched.section && formik.errors.section && (
               <div className="text-black font-bold">{formik.errors.section}</div>

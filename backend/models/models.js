@@ -17,7 +17,7 @@
     },
     section : {
         type : String,
-    },
+    }
     
  },{
     timestamps: true,
