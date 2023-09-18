@@ -9,6 +9,8 @@
   "author": "Mahendra Soni",
   "license": "ISC",
   "dependencies": {
+    "@netlify/functions": "^2.0.2",
+    "@types/express": "^4.17.17",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
@@ -16,6 +18,7 @@
     "ipware": "^2.0.0",
     "mongodb": "^6.1.0",
     "mongoose": "^7.5.2",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "serverless-http": "^3.2.0"
   }
 }

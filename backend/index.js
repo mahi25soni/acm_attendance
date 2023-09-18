@@ -3,6 +3,7 @@ const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const attendanceRouter = require("./src/attendance/atten.route")
 const cors = require("cors")
+const ser = require("")
 require('dotenv'). config();
 
 
@@ -27,3 +28,5 @@ catch(error){
 }};
 
 startApp()
+
+export const handler = serverless(app);
